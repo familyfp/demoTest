@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list">
+
+</ul>
+<script type="text/javascript">
+
+    var maxLength = 4;
+    var list = document.querySelector('#list');
+
+    function processName(name) {
+
+        return {
+
+            firstName: name[0],
+
+            lastName: name[1],
+
+            getFullName() {
+
+                return this.firstName + ' ' + this.lastName;
+
+            },
+
+        };
+
+    }
+
+
+
+    var names = [
+
+        ['Gregor', 'Bachmann'],
+
+        ['Anita', 'Bruns'],
+
+        ['Anke', 'Dorn'],
+
+        ['Ulrich', 'Koch'],
+
+        ['Dietrich', 'Riedl'],
+
+        ['Wolfgang', 'Jahn'],
+
+        ['Gesine', 'Sturm'],
+
+        ['Theodor', 'Petersen'],
+
+    ];
+
+
+
+    var validCount = 0;
+
+    for (var i = 0; i < names.length; i += 1) {
+
+        var flag1 = names[i][0].indexOf('A') !== 0;
+
+        var getFullName;
+
+        if (flag1 && names[i][0].length >= 4) {
+
+            getFullName = processName(names[i]).getFullName;
+
+            var lastName = processName(names[i]).lastName;
+
+            var firstName = processName(names[i]).firstName;
+
+            var span = document.createElement('li');
+
+            var textNode = document.createTextNode(i + 1 + '. ' + getFullName());
+
+            span.appendChild(textNode);
+
+            span.addEventListener('click', function () {
+
+                console.log('click on no.' + i + ' ' + firstName + ',' + lastName);
+
+            });
+
+            if (validCount + 1 > maxLength) {
+
+                continue;
+
+            }
+
+            validCount += 1;
+
+            list.appendChild(span);
+
+        }
+
+    }
+
+</script>
+</body>
+</html>
+
