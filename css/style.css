@@ -1,12 +1,16 @@
-*{
-    margin:0;
-    padding:0;
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding:0px;
 }
-
-.test{
-    width: 70%;
-    height: 1000px;
+a:link,a:active{
+    text-decoration: none;
+    display: block;
+    background-color: burlywood;
+    color:aliceblue;
+    width: 50px;
+    text-align: center;
+}
+a:active,a:hover{
     background-color: red;
-    margin-left: auto;
-    margin-right: auto;
 }
