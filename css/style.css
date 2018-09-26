@@ -1,0 +1,12 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.test{
+    width: 70%;
+    height: 1000px;
+    background-color: red;
+    margin-left: auto;
+    margin-right: auto;
+}
